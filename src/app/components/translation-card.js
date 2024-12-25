@@ -1,3 +1,5 @@
+import { ArrowRight } from "lucide-react"; // Importing the ArrowRight icon from lucide-react library
+
 // Mapping language codes to their respective country flags
 const languageToCountry = {
   en: "🏴", // English flag

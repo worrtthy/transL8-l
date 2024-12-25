@@ -130,11 +130,11 @@ export default function Home() {
                     />
                   </div>
                   <textarea
-                    placeholder="Translated text will appear here"
-                    className="border border-slate-800 rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-blue-700"
-                    value={translatedText}
-                    readOnly
-                  />
+  placeholder="Translated text will appear here"
+  className="border border-slate-800 rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-blue-700 text-black"  // Added text-black here
+  value={translatedText}
+  readOnly
+/>
                 </div>
               </div>
 

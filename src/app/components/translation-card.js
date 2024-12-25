@@ -8,7 +8,7 @@ const languageToCountry = {
   de: "🇩🇪", // German flag
   zh: "🇨🇳", // Mandarin flag (China)
   ar: "🇸🇦", // Arabic flag (Saudi Arabia as a representative of Arabic-speaking countries)
-  sw: "🇳🇬", // Swahili flag (Nigeria flag as a representative of Swahili speakers in Africa)
+  sw: "🇿🇦", // Swahili flag (Nigeria flag as a representative of Swahili speakers in Africa)
   hi: "🇮🇳", // Hindi flag (India flag as a representative of Hindi speakers)
   yo: "🇳🇬", // Yoruba flag (Nigeria flag as a representative of Yoruba speakers)
   ig: "🇳🇬", // Igbo flag (Nigeria flag as a representative of Igbo speakers)
@@ -25,16 +25,16 @@ export const TranslationCard = ({ group }) => {
           <>
             {/* Display source language flag and code */}
             <span className="text-black">{languageToCountry[group.source_language]}</span>
-            <span className="mx-2 text-black-500">{group.source_language.toUpperCase()}</span>
+            <span className="mx-2 text-black">{group.source_language.toUpperCase()}</span>
             {/* Arrow icon between languages */}
-            <ArrowRight className="text-black-400" />
+            <ArrowRight className="text-gray-400" />
             {/* Display target language code and flag */}
-            <span className="mx-2 text-black-500">{group.target_language.toUpperCase()}</span>
+            <span className="mx-2 text-black">{group.target_language.toUpperCase()}</span>
             <span>{languageToCountry[group.target_language]}</span>
           </>
         ) : (
           // Display fallback if language data is missing
-          <span>Unknown Languages</span>
+          <span className="text-black">Unknown Languages</span>
         )}
       </div>
 
@@ -48,7 +48,7 @@ export const TranslationCard = ({ group }) => {
           >
             {/* Display source text */}
             <div className="mb-2">
-              <h3 className="font-semibold mb-1 text-black"">Source</h3>
+              <h3 className="font-semibold mb-1 text-black">Source</h3>
               <p className="text-black">{sourceText || "No source text available"}</p> {/* Fallback message if no source text */}
             </div>
             {/* Display translation */}

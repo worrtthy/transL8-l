@@ -2,9 +2,17 @@ import { ArrowRight } from "lucide-react"; // Importing the ArrowRight icon from
 
 // Mapping language codes to their respective country flags
 const languageToCountry = {
-  en: "🏴", // English flag
+  en: "🏴", // English flag (England)
   es: "🇪🇸", // Spanish flag
   fr: "🇫🇷", // French flag
+  de: "🇩🇪", // German flag
+  zh: "🇨🇳", // Mandarin flag (China)
+  ar: "🇸🇦", // Arabic flag (Saudi Arabia as a representative of Arabic-speaking countries)
+  sw: "🇳🇬", // Swahili flag (Nigeria flag as a representative of Swahili speakers in Africa)
+  hi: "🇮🇳", // Hindi flag (India flag as a representative of Hindi speakers)
+  yo: "🇳🇬", // Yoruba flag (Nigeria flag as a representative of Yoruba speakers)
+  ig: "🇳🇬", // Igbo flag (Nigeria flag as a representative of Igbo speakers)
+  ha: "🇳🇬", // Hausa flag (Nigeria flag as a representative of Hausa speakers)
 };
 
 // The TranslationCard component takes in a "group" prop and renders translation details
@@ -16,12 +24,12 @@ export const TranslationCard = ({ group }) => {
         {group.source_language && group.target_language ? (
           <>
             {/* Display source language flag and code */}
-            <span>{languageToCountry[group.source_language]}</span>
-            <span className="mx-2 text-gray-500">{group.source_language.toUpperCase()}</span>
+            <span className="text-black">{languageToCountry[group.source_language]}</span>
+            <span className="mx-2 text-black-500">{group.source_language.toUpperCase()}</span>
             {/* Arrow icon between languages */}
-            <ArrowRight className="text-gray-400" />
+            <ArrowRight className="text-black-400" />
             {/* Display target language code and flag */}
-            <span className="mx-2 text-gray-500">{group.target_language.toUpperCase()}</span>
+            <span className="mx-2 text-black-500">{group.target_language.toUpperCase()}</span>
             <span>{languageToCountry[group.target_language]}</span>
           </>
         ) : (
@@ -40,13 +48,13 @@ export const TranslationCard = ({ group }) => {
           >
             {/* Display source text */}
             <div className="mb-2">
-              <h3 className="font-semibold mb-1">Source</h3>
-              <p>{sourceText || "No source text available"}</p> {/* Fallback message if no source text */}
+              <h3 className="font-semibold mb-1 text-black"">Source</h3>
+              <p className="text-black">{sourceText || "No source text available"}</p> {/* Fallback message if no source text */}
             </div>
             {/* Display translation */}
             <div>
-              <h3 className="font-semibold mb-1">Translations</h3>
-              <p>{group.translated_texts[index] || "No translation available"}</p> {/* Fallback message if no translation */}
+              <h3 className="font-semibold mb-1 text-black">Translations</h3>
+              <p className="text-black">{group.translated_texts[index] || "No translation available"}</p> {/* Fallback message if no translation */}
             </div>
           </div>
         ))}

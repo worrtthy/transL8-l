@@ -18,7 +18,7 @@ export const MenuBtn = () => {
   if (pathname === "/translations") {
     return (
       <Link
-        className="mr-2 border rounded-md p-2"
+        className="mr-2 border rounded-md p-2 text-black border-black"
         href="/"
       >
         Translate New
@@ -27,7 +27,7 @@ export const MenuBtn = () => {
   }
   return (
     <Link
-      className="mr-2 border rounded-md p-2"
+      className="mr-2 border rounded-md p-2 text-black border-black"
       href="/translations"
     >
       My Translations

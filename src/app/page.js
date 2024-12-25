@@ -1,23 +1,13 @@
-"use client";
-// Enables the use of client-side React features in this file.
+"use client"; // Enables the use of client-side React features in this file.
 
 import { useState, useEffect } from "react";  // Import React hooks
 
-import Image from "next/image";
-// Imports the Next.js Image component for optimized image handling.
-
-import { Dropdown } from "@/app/components/dropdown";
-// Imports a custom Dropdown component for language selection.
-
-import { translate } from "@/app/actions/translate";
-// Imports a function to handle text translation.
-
-import VoiceRecorder from "@/app/components/voice-recorder";
-// Imports a VoiceRecorder component to input text via voice.
-
-import SaveBtn from "@/app/components/save-translation-btn";
-import Footer from "./components/Footer";
-// Imports a Save button component for saving translations.
+import Image from "next/image"; // Imports the Next.js Image component for optimized image handling.
+import { Dropdown } from "@/app/components/dropdown"; // Imports a custom Dropdown component for language selection.
+import { translate } from "@/app/actions/translate"; // Imports a function to handle text translation.
+import VoiceRecorder from "@/app/components/voice-recorder"; // Imports a VoiceRecorder component to input text via voice.
+import SaveBtn from "@/app/components/save-translation-btn"; // Imports a Save button component for saving translations.
+import Footer from "./components/Footer"; // Imports the Footer component.
 
 const languageOptions = [
   { value: "en", label: "English" },
@@ -39,7 +29,6 @@ export default function Home() {
   const [inputText, setInputText] = useState("");
   const [translatedText, setTranslatedText] = useState("");
   const [isSaved, setIsSaved] = useState(false);
-
   const [isClient, setIsClient] = useState(false); // Track whether it's client-side
 
   useEffect(() => {
@@ -88,6 +77,7 @@ export default function Home() {
           Break language barriers instantly with Transl8 – fast, accurate, and effortless translation. Try it now!
         </p>
       </div>
+      
       {/* Main translation interface */}
       <div className="bg-white shadow-xl rounded-lg p-6 max-w-3xl mx-auto">
         <div className="grid grid-rows-[20px_1fr_20px] items-start justify-items-center p-2 pb-2 gap-4 sm:p-6">
@@ -102,9 +92,9 @@ export default function Home() {
                 }
               }}
             >
-              <div className="flex flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full">
                 {/* Source language and text input */}
-                <div className="container flex flex-col">
+                <div className="flex flex-col w-full sm:w-1/2">
                   <Dropdown
                     name="languageFrom"
                     value={languageFrom}
@@ -113,16 +103,17 @@ export default function Home() {
                   />
                   <textarea
                     placeholder="Enter text to translate"
-                    className="border border-slate-800 rounded-md p-4"
+                    className="border border-slate-800 rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-blue-700"
                     value={inputText}
                     name="text"
                     required
                     onChange={handleInputChange}
                   />
                 </div>
+                
                 {/* Target language and translation output */}
-                <div className="container flex flex-col">
-                  <div className="justify-between flex">
+                <div className="flex flex-col w-full sm:w-1/2">
+                  <div className="flex justify-between">
                     <Dropdown
                       name="languageTo"
                       value={languageTo}
@@ -140,17 +131,18 @@ export default function Home() {
                   </div>
                   <textarea
                     placeholder="Translated text will appear here"
-                    className="border border-slate-800 rounded-md p-4"
+                    className="border border-slate-800 rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-blue-700"
                     value={translatedText}
                     readOnly
                   />
                 </div>
               </div>
+
               {/* Submit button and voice recorder */}
-              <div className="flex flex-row items-center gap-2 h-16">
+              <div className="flex flex-row items-center gap-2 h-16 mt-4">
                 <button
                   type="submit"
-                  className="p-2 rounded-md bg-slate-800 text-white"
+                  className="p-2 rounded-md bg-slate-800 text-white focus:outline-none"
                 >
                   Translate
                 </button>

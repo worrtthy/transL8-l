@@ -102,13 +102,13 @@ export default function Home() {
                     onChange={handleLanguageFromChange}
                   />
                   <textarea
-                    placeholder="Enter text to translate"
-                    className="border border-slate-800 rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-blue-700"
-                    value={inputText}
-                    name="text"
-                    required
-                    onChange={handleInputChange}
-                  />
+  placeholder="Enter text to translate"
+  className="border border-slate-800 rounded-md p-4 text-black focus:outline-none focus:ring-2 focus:ring-blue-700"
+  value={inputText}
+  name="text"
+  required
+  onChange={handleInputChange}
+/>
                 </div>
                 
                 {/* Target language and translation output */}

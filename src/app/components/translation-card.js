@@ -1,5 +1,3 @@
-import { ArrowRight } from "lucide-react"; // Importing the ArrowRight icon from lucide-react library
-
 // Mapping language codes to their respective country flags
 const languageToCountry = {
   en: "🏴", // English flag
@@ -41,12 +39,12 @@ export const TranslationCard = ({ group }) => {
             {/* Display source text */}
             <div className="mb-2">
               <h3 className="font-semibold mb-1">Source</h3>
-              <p className="text-black">{sourceText || "No source text available"}</p> {/* Black text */}
+              <p>{sourceText || "No source text available"}</p> {/* Fallback message if no source text */}
             </div>
             {/* Display translation */}
             <div>
               <h3 className="font-semibold mb-1">Translations</h3>
-              <p className="text-black">{group.translated_texts[index] || "No translation available"}</p> {/* Black text */}
+              <p>{group.translated_texts[index] || "No translation available"}</p> {/* Fallback message if no translation */}
             </div>
           </div>
         ))}

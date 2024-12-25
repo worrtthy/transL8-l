@@ -1,6 +1,7 @@
-"use client";
-import { useRef, useState } from "react";
-import { Mic, Square } from "lucide-react";
+"use client"; // Ensures the code is executed on the client side
+
+import { useState, useRef, useEffect } from "react"; // Import necessary hooks
+import { Mic, Square } from "lucide-react"; // Import icons for mic and square button
 
 export default function VoiceRecorder({ handleSetText }) {
   // State to track if recording is ongoing
@@ -12,6 +13,17 @@ export default function VoiceRecorder({ handleSetText }) {
   // Refs to hold the media recorder instance and the audio chunks
   const mediaRecorderRef = useRef(null);
   const chunksRef = useRef([]);
+
+  // State to track if the component has been mounted to avoid hydration issues
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Ensure code only runs on the client side
+  }, []);
+
+  if (!isClient) {
+    return null; // Return nothing during SSR to prevent hydration mismatch
+  }
 
   // Start recording function that accesses the user's microphone
   const startRecording = async () => {

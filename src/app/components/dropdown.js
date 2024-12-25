@@ -1,7 +1,19 @@
 "use client";  // Indicating this component runs on the client-side (next.js 13+)
 
+import { useState, useEffect } from "react";  // Import hooks for state and effects
+
 // Dropdown component for rendering a select input with options
 export const Dropdown = ({ name, value, onChange, options }) => {
+  const [isClient, setIsClient] = useState(false);  // State to check if component is rendered on the client-side
+
+  useEffect(() => {
+    setIsClient(true);  // Set state to true when component is rendered on the client-side
+  }, []);
+
+  if (!isClient) {
+    return null;  // Return nothing during server-side render to prevent hydration error
+  }
+
   return (
     <select
       name={name}  // The name attribute used to identify the select element

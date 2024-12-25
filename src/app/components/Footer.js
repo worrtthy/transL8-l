@@ -14,7 +14,7 @@ const Footer = () => {
           href="https://docs.google.com/document/d/1g9iv1Fy13sT9EWjfchvsM5QA92fUebaamIh8-4yE11E/edit?usp=sharing" // Replace with your actual Google Docs link
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-900 hover:underline"
+          className="text-blue-600 hover:underline"
         >
           Group 10; 
         </a>

@@ -41,12 +41,12 @@ export const TranslationCard = ({ group }) => {
             {/* Display source text */}
             <div className="mb-2">
               <h3 className="font-semibold mb-1">Source</h3>
-              <p>{sourceText || "No source text available"}</p> {/* Fallback message if no source text */}
+              <p className="text-black">{sourceText || "No source text available"}</p> {/* Black text */}
             </div>
             {/* Display translation */}
             <div>
               <h3 className="font-semibold mb-1">Translations</h3>
-              <p>{group.translated_texts[index] || "No translation available"}</p> {/* Fallback message if no translation */}
+              <p className="text-black">{group.translated_texts[index] || "No translation available"}</p> {/* Black text */}
             </div>
           </div>
         ))}
